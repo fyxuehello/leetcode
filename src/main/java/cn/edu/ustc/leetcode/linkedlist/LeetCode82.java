@@ -30,7 +30,7 @@ import java.util.List;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class LinkedList82 {
+public class LeetCode82 {
     public ListNode deleteDuplicates(ListNode head) {
         if(head==null)
             return null;

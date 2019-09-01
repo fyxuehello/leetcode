@@ -28,7 +28,7 @@ import java.util.List;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class LinkedList83 {
+public class LeetCode83 {
     //方法1优于方法2
     public ListNode deleteDuplicates(ListNode head) {
         if(head==null)

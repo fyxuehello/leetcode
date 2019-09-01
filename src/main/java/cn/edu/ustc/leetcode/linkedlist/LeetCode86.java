@@ -23,7 +23,7 @@ import cn.edu.ustc.leetcode.util.ListNode;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class LinkedList86 {
+public class LeetCode86 {
     public ListNode partition(ListNode head, int x) {
         ListNode smaller=new ListNode(0),bigger=new ListNode(0);
         ListNode smallerCur=smaller,biggrCur=bigger;

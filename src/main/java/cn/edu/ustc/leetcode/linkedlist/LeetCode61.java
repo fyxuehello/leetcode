@@ -30,7 +30,7 @@ import cn.edu.ustc.leetcode.util.ListNode;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class LinkedList61 {
+public class LeetCode61 {
     public ListNode rotateRight(ListNode head, int k) {
         if(head==null||head.next==null)return head;
         ListNode dummy=new ListNode(0);

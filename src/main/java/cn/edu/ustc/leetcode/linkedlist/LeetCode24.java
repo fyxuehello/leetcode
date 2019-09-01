@@ -17,7 +17,7 @@ import cn.edu.ustc.leetcode.util.ListNode;
  *     ListNode(int x) { val = x; }
  * }
  */
-public class LinkedList24 {
+public class LeetCode24 {
     public ListNode swapPairs(ListNode head) {
         ListNode result=new ListNode(0);
         result.next=head;
