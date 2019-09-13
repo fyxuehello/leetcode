@@ -8,6 +8,7 @@ hasNext返回是否还有下一个最小的元素；
  */
 
 import cn.edu.ustc.leetcode.util.TreeNode;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +33,7 @@ public class LeetCode173 {
     }
 
     /** @return the next smallest number */
+
     public int next() {
         while(node!=null){
             stack.push(node);
