@@ -10,7 +10,7 @@ package cn.edu.ustc.leetcode.dynamicProgramming;
 注意边界情况；
 
  */
-public class LeetCode67 {
+public class LeetCode62 {
     public int uniquePaths(int m, int n) {
         int[][] dp=new int[m][n];
 
