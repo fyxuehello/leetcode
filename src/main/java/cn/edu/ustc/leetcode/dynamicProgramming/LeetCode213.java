@@ -23,7 +23,7 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
 思路：
 动态规划
-因为有个房间呈环形，那么共有两种选择：第一种是从第一间到怠速第二间或者从第二间到倒数第一间.
+因为有个房间呈环形，那么共有两种选择：第一种是从第一间到倒数第二间或者从第二间到倒数第一间.
  */
 public class LeetCode213 {
     public int rob(int[] nums) {
@@ -40,4 +40,6 @@ public class LeetCode213 {
         }
         return prev1;
     }
+
+
 }
