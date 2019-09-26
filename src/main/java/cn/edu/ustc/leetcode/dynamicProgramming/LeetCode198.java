@@ -23,6 +23,7 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
 思路：
 动态规划
+到达当前房间i有两种选择：如果i-2+nums[i]大于i-1
  */
 public class LeetCode198 {
     public int rob1(int[] nums) {
