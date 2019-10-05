@@ -20,11 +20,11 @@ Note: You may not slant the container and n is at least 2.
  */
 public class LeetCode11 {
     public int maxArea(int[] height) {
-        int res=0;
-        int low=0,high= height.length-1;
-        while(low<high){
-            res=Math.max(res,Math.min(height[low],height[high])*(high-low));
-            if(height[low]<height[high])
+        int res = 0;
+        int low = 0, high = height.length - 1;
+        while (low < high) {
+            res = Math.max(res, Math.min(height[low], height[high]) * (high - low));
+            if (height[low] < height[high])
                 low++;
             else
                 high--;
