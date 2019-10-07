@@ -20,10 +20,10 @@ public class LeetCode42 {
         while (left < right) {
             if (height[left] < height[right]) {
                 maxLeft = Math.max(maxLeft, height[++left]);
-                totalArea +=(maxLeft-height[left]);
-            }else{
-                maxRight=Math.max(maxRight,height[--right]);
-                totalArea+=(maxRight-height[right]);
+                totalArea += (maxLeft - height[left]);
+            } else {
+                maxRight = Math.max(maxRight, height[--right]);
+                totalArea += (maxRight - height[right]);
             }
         }
         return totalArea;
