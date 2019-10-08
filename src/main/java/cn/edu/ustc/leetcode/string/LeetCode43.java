@@ -1,5 +1,7 @@
 package cn.edu.ustc.leetcode.string;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /*
 题目：
 Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
@@ -37,10 +39,12 @@ public class LeetCode43 {
             }
         }
         StringBuilder sb = new StringBuilder();
-        for (Integer s : pos) {
-            if (!(sb.length() == 0 && s == 0))
-                sb.append(s);
+        for (Integer p : pos) {
+            if (!(sb.length() == 0 && p == 0))
+                sb.append(p);
         }
         return sb.length() == 0 ? "0" : sb.toString();
     }
+    ConcurrentHashMap<String,String> map=new ConcurrentHashMap<>();
+
 }
