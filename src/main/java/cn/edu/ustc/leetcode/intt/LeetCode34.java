@@ -21,5 +21,21 @@ Output: [-1,-1]
 
  */
 public class LeetCode34 {
-
+    public int[] searchRange(int[] nums, int target) {
+        int first=firstIndex(nums,target);
+        if(first==nums.length||nums[first]!=target)
+            return new int[]{-1,-1};
+        return new int[]{first,firstIndex(nums,target+1)-1};
+    }
+    private int firstIndex(int[] nums,int target){//第一个等于大于target的位置
+        int low=0,high=nums.length-1;
+        while(low<=high){
+            int mid=high-(high-low)/2;
+            if(nums[mid]<target)
+                low=mid+1;
+            else
+                high=mid-1;
+        }
+        return low;
+    }
 }
