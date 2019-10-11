@@ -38,19 +38,19 @@ public class LeetCode25 {
         ListNode cur = head;
         int count = 0;
         while (cur != null && count != k) {
-            cur=cur.next;
+            cur = cur.next;
             count++;
         }
-        if(count==k){//找到第k 个节点
-            cur=reverseKGroup(cur,k);
+        if (count == k) {//找到第k 个节点
+            cur = reverseKGroup(cur, k);
 
-            while(count-->0){
-                ListNode temp=head.next;
-                head.next=cur;
-                cur=head;
-                head=temp;
+            while (count-- > 0) {
+                ListNode temp = head.next;
+                head.next = cur;
+                cur = head;
+                head = temp;
             }
-            head=cur;
+            head = cur;
         }
         return head;
     }
