@@ -33,43 +33,46 @@ N皇后问题，采用回溯算法；
 */
 public class LeetCode51 {
     public List<List<String>> solveNQueens(int n) {
-        char[][] board=new char[n][n];
-        for(int i=0;i<board.length;i++){
-            for(int j=0;j<board.length;j++){
-                board[i][j]='.';
+        char[][] board = new char[n][n];
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                board[i][j] = '.';
             }
         }
-        List<List<String>> res=new ArrayList<>();
-        dfs(res,board,0);
+        List<List<String>> res = new ArrayList<>();
+        dfs(res, board, 0);
         return res;
     }
-    private void dfs(List<List<String>> res,char[][] board,int colIndex){
-        if(colIndex==board.length){
+
+    private void dfs(List<List<String>> res, char[][] board, int colIndex) {
+        if (colIndex == board.length) {
             res.add(builder(board));
             return;
         }
-        for(int i=0;i<board.length;i++){
-            if(validate(board,i,colIndex)){
-                board[i][colIndex]='Q';
-                dfs(res,board,colIndex+1);
-                board[i][colIndex]='.';
+        for (int i = 0; i < board.length; i++) {
+            if (validate(board, i, colIndex)) {
+                board[i][colIndex] = 'Q';
+                dfs(res, board, colIndex + 1);
+                board[i][colIndex] = '.';
             }
         }
     }
-    private boolean validate(char[][] board,int x,int y){
-        for(int i=0;i<board.length;i++){
-            for(int j=0;j<y;j++){
-                if(board[i][j]=='Q'&&(x+j==y+i||x+y==i+j)||x==i){
+
+    private boolean validate(char[][] board, int x, int y) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < y; j++) {
+                if (board[i][j] == 'Q' && (x + j == y + i || x + y == i + j) || x == i) {
                     return false;
                 }
             }
         }
         return true;
     }
-    private List<String> builder(char[][] board){
-        List<String> res=new LinkedList<>();
-        for(int i=0;i<board.length;i++){
-            String  s=new String(board[i]);
+
+    private List<String> builder(char[][] board) {
+        List<String> res = new LinkedList<>();
+        for (int i = 0; i < board.length; i++) {
+            String s = new String(board[i]);
             res.add(s);
         }
         return res;
