@@ -57,30 +57,32 @@ import java.util.Stack;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 public class LeetCode99 {
-    TreeNode firstNode,secondNode,prevNode;
+    TreeNode firstNode, secondNode, prevNode;
+
     public void recoverTree(TreeNode root) {
         inOrder(root);
 
-        int temp=firstNode.val;
-        firstNode.val=secondNode.val;
-        secondNode.val=temp;
+        int temp = firstNode.val;
+        firstNode.val = secondNode.val;
+        secondNode.val = temp;
     }
-    private void inOrder(TreeNode root){
-        if(root==null)
+
+    private void inOrder(TreeNode root) {
+        if (root == null)
             return;
 
         inOrder(root.left);
-        if(firstNode==null&&(prevNode==null||prevNode.val>=root.val))
-            firstNode=prevNode;
-        if(firstNode!=null&&prevNode.val>=root.val)
-            secondNode=root;
+        if (firstNode == null && (prevNode == null || prevNode.val >= root.val))
+            firstNode = prevNode;
+        if (firstNode != null && prevNode.val >= root.val)
+            secondNode = root;
         inOrder(root.right);
     }
 }
