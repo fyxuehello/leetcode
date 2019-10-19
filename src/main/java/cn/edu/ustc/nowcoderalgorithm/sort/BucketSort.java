@@ -1,7 +1,7 @@
 package cn.edu.ustc.nowcoderalgorithm.sort;
 
 /*
-桶排序，时间复杂度O(N^2)，空间复杂度O(1),稳定；
+桶排序，时间复杂度O(N+K)，空间复杂度O(N+K),稳定；
 
 思路：
 
