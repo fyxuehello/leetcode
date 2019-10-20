@@ -1,9 +1,5 @@
 package cn.edu.ustc.leetcode.intt;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 /*
 题目：
 Implement pow(x, n), which calculates x raised to the power n (xn).
