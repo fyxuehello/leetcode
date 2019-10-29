@@ -17,4 +17,25 @@ public class Number13 {
             }
         }
     }
+    /*
+    时间复杂度O(n)，空间复杂度O(n)
+    整体思路：
+首先统计奇数的个数
+然后新建一个等长数组，设置两个指针，奇数指针从0开始，偶数指针从奇数个数的末尾开始 遍历，填数
+     */
+    public void reOrderArray2(int [] array) {
+        if(array.length==0||array.length==1) return;
+        int oddCount=0,oddBegin=0;
+        int[] newArray=new int[array.length];
+        for(int i=0;i<array.length;i++){
+            if((array[i]&1)==1) oddCount++;
+        }
+        for(int i=0;i<array.length;i++){
+            if((array[i]&1)==1) newArray[oddBegin++]=array[i];
+            else newArray[oddCount++]=array[i];
+        }
+        for(int i=0;i<array.length;i++){
+            array[i]=newArray[i];
+        }
+    }
 }
