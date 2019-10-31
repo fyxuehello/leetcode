@@ -1,7 +1,11 @@
 package cn.edu.ustc.jianzhioffer;
 
+import cn.edu.ustc.leetcode.util.TreeNode;
+
 import java.util.ArrayList;
+
 import java.util.Stack;
+
 
 /*
 定义栈的数据结构，
@@ -25,6 +29,7 @@ public class Number20 {
 
     public int top() {
         return stack.peek();
+        //Queue<TreeNode> queue=new LinkedList<>();
     }
 
     public int min() {
