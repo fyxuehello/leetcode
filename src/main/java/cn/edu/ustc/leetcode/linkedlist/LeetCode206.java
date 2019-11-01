@@ -26,6 +26,7 @@ public class LeetCode206 {
        while(cur!=null){
            ListNode temp=cur.next;
            cur.next=pre;
+
            pre=cur;
            cur=temp;
        }
