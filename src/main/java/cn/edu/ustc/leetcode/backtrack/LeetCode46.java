@@ -40,5 +40,6 @@ public class LeetCode46 {
             list.remove(list.size()-1);//that means remove the element u just added on the back,
             // u can also call it backtrack
         }
+
     }
 }
