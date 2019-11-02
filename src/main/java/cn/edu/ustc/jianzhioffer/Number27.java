@@ -3,58 +3,47 @@ package cn.edu.ustc.jianzhioffer;
 
 import cn.edu.ustc.leetcode.util.RandomListNode;
 
-/*
-输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，
-另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。
-（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
-*/
-/*
-public class RandomListNode {
-    int label;
-    RandomListNode next = null;
-    RandomListNode random = null;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
-    RandomListNode(int label) {
-        this.label = label;
-    }
-}
+/*
+输入一个字符串,按字典序打印出该字符串中字符的所有排列。
+例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+
+输入描述:
+输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 */
+
+
 public class Number27 {
-    public RandomListNode Clone(RandomListNode pHead)
-    {
-        if(pHead==null)
-            return null;
-        RandomListNode cur=pHead;
-
-        while(cur!=null){
-            RandomListNode cloneNode=new RandomListNode(cur.label);
-            RandomListNode curNext=cur.next;
-            cur.next=cloneNode;
-            cloneNode.next=curNext;
-
-            cur=curNext;
-        }
-
-        cur=pHead;
-        while(cur!=null){
-            if(cur.random!=null){
-                cur.next.random=cur.random.next;
-            }
-            cur=cur.next.next;
-        }
-
-        //
-        cur=pHead;
-        RandomListNode res=cur.next;
-        while(cur!=null){
-            RandomListNode oldNext=cur.next.next;
-            RandomListNode copy=cur.next;
-            cur.next=oldNext;
-            if(oldNext!=null){
-                copy.next=oldNext.next;
-            }
-            cur=oldNext;
+    public ArrayList<String> Permutation(String str) {
+        ArrayList<String> res=new ArrayList<>();
+        if(str!=null&&str.length()>0){
+            backtrace(str.toCharArray(),0,res);
+            Collections.sort(res);
         }
         return res;
+    }
+    private void backtrace(char[] ch,int start,ArrayList<String> res){
+        if(start==ch.length-1)
+            res.add(String.valueOf(ch));
+        else{
+            Set<Character> set=new HashSet<>();
+            for(int i=start;i<ch.length;i++){
+                if(i==start||!set.contains(ch[i])){
+                    set.add(ch[i]);
+                    swap(ch,start,i);
+                    backtrace(ch,start+1,res);
+                    swap(ch,i,start);
+                }
+            }
+        }
+    }
+    private void swap(char[] ch,int i,int j){
+        char temp=ch[i];
+        ch[i]=ch[j];
+        ch[j]=temp;
     }
 }
