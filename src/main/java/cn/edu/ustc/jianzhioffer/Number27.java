@@ -9,41 +9,35 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
-输入一个字符串,按字典序打印出该字符串中字符的所有排列。
-例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，
+超过数组长度的一半，因此输出2。如果不存在则输出0。
 
-输入描述:
-输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 */
 
 
 public class Number27 {
-    public ArrayList<String> Permutation(String str) {
-        ArrayList<String> res=new ArrayList<>();
-        if(str!=null&&str.length()>0){
-            backtrace(str.toCharArray(),0,res);
-            Collections.sort(res);
-        }
-        return res;
-    }
-    private void backtrace(char[] ch,int start,ArrayList<String> res){
-        if(start==ch.length-1)
-            res.add(String.valueOf(ch));
-        else{
-            Set<Character> set=new HashSet<>();
-            for(int i=start;i<ch.length;i++){
-                if(i==start||!set.contains(ch[i])){
-                    set.add(ch[i]);
-                    swap(ch,start,i);
-                    backtrace(ch,start+1,res);
-                    swap(ch,i,start);
-                }
+    public int MoreThanHalfNum_Solution(int[] array) {
+        if (array == null)
+            return 0;
+        int num = array[0];
+        int count = 1;
+        for (int i = 1; i < array.length; i++) {
+            if (count == 0) {
+                num = array[i];
+                count = 1;
+            } else if (num == array[i]) {
+                count++;
+            } else {
+                count--;
             }
         }
-    }
-    private void swap(char[] ch,int i,int j){
-        char temp=ch[i];
-        ch[i]=ch[j];
-        ch[j]=temp;
+        int times = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (num == array[i]) {
+                times++;
+            }
+        }
+        return times > (array.length / 2) ? num : 0;
     }
 }
