@@ -29,6 +29,5 @@ public class Number29 {
             res.add(i);
         }
         return res;
-
     }
 }
