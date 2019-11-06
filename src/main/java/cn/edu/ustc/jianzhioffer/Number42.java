@@ -27,6 +27,6 @@ public class Number42 {
             }
         }
         return res;
-    
+
     }
 }
