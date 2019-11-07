@@ -14,14 +14,14 @@ public class Number50 {
     //    这里要特别注意~返回任意重复的一个，赋值duplication[0]
     // Return value:       true if the input is valid, and there are some duplications in the array number
     //                     otherwise false
-    public boolean duplicate(int numbers[],int length,int [] duplication) {
-        boolean[] record=new boolean[length];
-        for(int i=0;i<length;i++){
-            if(record[numbers[i]]==true){
-                duplication[0]=numbers[i];
+    public boolean duplicate(int numbers[], int length, int[] duplication) {
+        boolean[] record = new boolean[length];
+        for (int i = 0; i < length; i++) {
+            if (record[numbers[i]] == true) {
+                duplication[0] = numbers[i];
                 return true;
             }
-            record[numbers[i]]=true;
+            record[numbers[i]] = true;
 
         }
         return false;
